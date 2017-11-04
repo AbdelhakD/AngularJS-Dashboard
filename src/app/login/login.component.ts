@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 import { Router } from '@angular/router';
 import { routerTransition } from '../router.animations';
+import { AuthenticationService } from '../shared/services/index';
+
 
 @Component({
     selector: 'app-login',
@@ -14,10 +16,13 @@ export class LoginComponent implements OnInit {
     loading = false;
 
 
-    constructor(public router: Router) {
-    }
+    constructor(
+        private router: Router,
+        private authenticationService: AuthenticationService) { }
 
     ngOnInit() {
+        this.authenticationService.logout();
+
     }
 
     onLoggedin() {
@@ -25,16 +30,15 @@ export class LoginComponent implements OnInit {
         console.warn(this.model.password);
         localStorage.setItem('isLoggedin', 'true');
         this.loading = true;
-        /*this.loading = true;
          this.authenticationService.login(this.model.username, this.model.password)
          .subscribe(
-         data => {
-         this.router.navigate([this.returnUrl]);
-         },
-         error => {
-         this.alertService.error(error);
-         this.loading = false;
-         });*/
+                     data => {
+                     this.router.navigate([this.returnUrl]);
+                     },
+                     error => {
+                     this.alertService.error(error);
+                     this.loading = false;
+                     });
 
     }
 
