@@ -15,10 +15,10 @@
     </div>
     <hr>
     <div class="row">
-        <div class="col-xl-3 col-lg-6">
-            <app-stat [bgClass]="'card-primary'" [icon]="'fa-comments'" [count]="26" [label]="'New Comments!'" ></app-stat>
+        <div class="col-xl-3 col-lg-6" *ngFor="let data of datas">
+            <app-stat [bgClass]="'card-primary'" [icon]="'fa-tasks'" [count]="data.age" [label]="data.firstName" ></app-stat>
         </div>
-        <div class="col-xl-3 col-lg-6">
+        <!--div class="col-xl-3 col-lg-6">
             <app-stat [bgClass]="'card-info'" [icon]="'fa-tasks'" [count]="12" [label]="'New task!'" ></app-stat>
         </div>
         <div class="col-xl-3 col-lg-6">
@@ -26,38 +26,6 @@
         </div>
         <div class="col-xl-3 col-lg-6">
             <app-stat [bgClass]="'card-danger'" [icon]="'fa-support'" [count]="13" [label]="'New Tickets!'"></app-stat>
-        </div>
-    </div>
-    <hr />
-    <ngb-alert [type]="alert.type" (close)="closeAlert(alert)" *ngFor="let alert of alerts">{{ alert.message }}</ngb-alert>
-    <hr />
-    <div class="row">
-        <div class="col-lg-8">
-            <div class="card card-default">
-                <div class="card-header">
-                    <i class="fa fa-clock-o fa-fw"></i> Responsive Timeline
-                </div>
-                <!-- /.card-header -->
-                <app-timeline></app-timeline>
-                <!-- /.card-body -->
-            </div>
-            <!-- /.card -->
-        </div>
-        <!-- /.col-lg-8 -->
-        <div class="col-lg-4">
-            <div class="card card-default">
-                <div class="card-header">
-                    <i class="fa fa-bell fa-fw"></i> Notifications card
-                </div>
-                <!-- /.card-header -->
-                <app-notification></app-notification>
-                <!-- /.card-body -->
-            </div>
-            <!-- /.card -->
-
-            <app-chat></app-chat>
-            <!-- /.card .chat-card -->
-        </div>
-        <!-- /.col-lg-4 -->
+        </div-->
     </div>
 </div>

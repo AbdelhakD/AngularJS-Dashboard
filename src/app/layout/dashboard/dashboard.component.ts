@@ -10,6 +10,7 @@ import { routerTransition } from '../../router.animations';
 export class DashboardComponent implements OnInit {
     public alerts: Array<any> = [];
     public sliders: Array<any> = [];
+    public datas: Array<any> = [];
 
     constructor() {
         this.sliders.push({
@@ -40,6 +41,22 @@ export class DashboardComponent implements OnInit {
                 Voluptates est animi quibusdam praesentium quam, et perspiciatis,
                 consectetur velit culpa molestias dignissimos
                 voluptatum veritatis quod aliquam! Rerum placeat necessitatibus, vitae dolorum`
+        });
+        this.datas.push({
+            imagePath: 'assets/images/slider1.jpg',
+            firstName: 'First Player',
+            latstName: 'Nulla.',
+            age: '18'
+        }, {
+            imagePath: 'assets/images/slider1.jpg',
+            firstName: 'First Player',
+            latstName: 'Nulla.',
+            age: '10'
+        }, {
+            imagePath: 'assets/images/slider1.jpg',
+            firstName: 'First Player',
+            latstName: 'Nulla.',
+            age: '10'
         });
     }
 
